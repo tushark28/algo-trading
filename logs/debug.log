@@ -1,0 +1,54 @@
+get fund data
+{
+      "status": "success",
+      "data": {
+            "commodity": {
+                  "used_margin": 0.0,
+                  "payin_amount": 0.0,
+                  "span_margin": 0.0,
+                  "adhoc_margin": 0.0,
+                  "notional_cash": 0.0,
+                  "available_margin": 0.0,
+                  "exposure_margin": 0.0
+            },
+            "equity": {
+                  "used_margin": 0.0,
+                  "payin_amount": 0.0,
+                  "span_margin": 0.0,
+                  "adhoc_margin": 0.0,
+                  "notional_cash": 0.0,
+                  "available_margin": 0.0,
+                  "exposure_margin": 0.0
+            }
+      }
+}
+
+
+
+access token
+{
+      "email": "manikvig8112@gmail.com",
+      "exchanges": [
+            "BSE",
+            "NSE"
+      ],
+      "products": [
+            "OCO",
+            "D",
+            "CO",
+            "I"
+      ],
+      "broker": null,
+      "user_id": "47BK7M",
+      "user_name": "MANIK  VIG",
+      "order_types": [
+            "MARKET",
+            "LIMIT",
+            "SL",
+            "SL-M"
+      ],
+      "user_type": null,
+      "poa": false,
+      "is_active": true,
+      "access_token": "eyJ0eXAiOiJKVJrZXlfaWQiOiJza192MS4wIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiI0N0JLN00iLCJqdGkiOiI2NGZmNjAzZWJkY2NiMjc0YTAxNTBmZDQiLCJpc011bHRpQ2xpZW50IjpmYWxzZSwiaXNBY3RpdmUiOnRydWUsInNjb3BlIjpbImludGVyYWN0aXZlIiwiaGlzdG9yaWNhbCJdLCJpYXQiOjE2OTQ0NTc5MTgsImlzcyI6InVkYXBpLWdhdGV3YXktc2VydmljZSIsImV4cCI6MTY5NDQ2OTYwMH0.E2Ijgd0IO9-Behm2w8cVC2qnnQCIWHjIbHKFFcKG5J0"
+}
