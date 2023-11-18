@@ -47,11 +47,22 @@ class NseSheetStock(models.Model):
 
 class StockData(models.Model):
     symbl = models.CharField(primary_key=True, max_length=15)
-    price = models.FloatField(max_length=20, null=True, blank=True)
+    rate = models.FloatField(max_length=20, null=True, blank=True)
     instrument_symbl = models.CharField(max_length=40)
     day_open = models.FloatField(max_length=40, default=0)
-    price_bought = models.FloatField(max_length=40, default=0)
     day_high = models.FloatField(max_length=40, default=40)
 
     class Meta:
         indexes = [models.Index(fields=["symbl"])]
+
+class StockTransaction(models.Model):
+    id = models.AutoField(primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    symbl = models.ForeignKey(StockData, on_delete=models.PROTECT)
+    price = models.FloatField(max_length=40, default=0)
+    rate = models.FloatField(max_length=20, default=0)
+    quantity = models.IntegerField(default= 0)
+    datetime = models.DateTimeField(auto_now_add=True)
+    type = models.CharField(max_length=10,help_text='SELL OR BOUGHT')
+    closed = models.BooleanField(default=False)
+

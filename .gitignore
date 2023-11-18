@@ -1,2 +1,6 @@
 website/settings.py
 venv
+db.sqlite3
+logs
+__pycache__/
+migrations/

@@ -26,7 +26,7 @@ admin.site.register(UserFund, FundAdmin)
 # admin.site.register(NseSheetStocks, nseAdmin)
 
 class stockdataAdmin(admin.ModelAdmin):
-    list_display = ['symbl','price','day_open','day_high','price_bought','instrument_symbl']
+    list_display = ['symbl','rate','day_open','day_high','instrument_symbl']
 
 admin.site.register(StockData, stockdataAdmin)
 
