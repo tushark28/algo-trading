@@ -1,0 +1,50 @@
+{% extends 'algotrading/base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h2>User Profile</h2>
+    
+    <p><strong>Username:</strong> {{ user.username }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    
+    <h3>Upstox Information</h3>
+    
+    {% if user.upstox_redirect_uri %}
+      <p><strong>Upstox Redirect URI:</strong> {{ user.upstox_redirect_uri }}</p>
+    {% else %}
+      <p><em>No Upstox Redirect URI provided.</em></p>
+    {% endif %}
+    
+    {% if user.upstox_api_secret %}
+      <p><strong>Upstox API Secret:</strong> {{ user.upstox_api_secret }}</p>
+    {% else %}
+      <p><em>No Upstox API Secret provided.</em></p>
+    {% endif %}
+    
+    {% if user.upstox_api_key %}
+      <p><strong>Upstox API Key:</strong> {{ user.upstox_api_key }}</p>
+    {% else %}
+      <p><em>No Upstox API Key provided.</em></p>
+    {% endif %}
+
+    <button id="editUpstoxInfo">Edit</button>
+
+    <!-- Edit Form -->
+    <form id="editForm" method="post" action="{% url 'trade/profile' %}" style="display: none;">
+      {% csrf_token %}
+      <!-- Include form fields for editing information -->
+        {{form.as_p}}
+
+      <button type="submit">Save Changes</button>
+    </form>
+  </div>
+
+  <script>
+    // JavaScript to handle the edit button click and show the edit form
+    document.getElementById('editUpstoxInfo').addEventListener('click', function() {
+      document.getElementById('editForm').style.display = 'block';
+    });
+  </script>
+{% endblock %}
